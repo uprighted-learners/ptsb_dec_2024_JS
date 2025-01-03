@@ -1,5 +1,4 @@
 console.log("Hello world!");
-
 /* 
     ? JavaScript
     * found in 1996 by Brandon Eich
