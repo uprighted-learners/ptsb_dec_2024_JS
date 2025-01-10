@@ -1,3 +1,47 @@
+// Assignment Review
+
+
+// ? [JS] Capitalize
+
+let word = "aMiT";
+let fullWord = word[0].toUpperCase() +  word.slice(1).toLowerCase();
+
+
+//? [JS] Hello Friend, Go away Enemy
+
+
+let enemy = "darth vAdEr";
+
+function greeter (name){
+
+    let nameLowerCased = name.toLowerCase()
+    let enemyLowerCased = enemy.toLowerCase() 
+
+    if (nameLowerCased === enemyLowerCased) {
+        console.log(`Go away ${name}`);
+    } else {
+        console.log(`Hello ${name}!`);
+    }
+} 
+
+greeter("Darth Vader")
+
+"darth vader" === "darth vader"
+
+
+
+// (Loosely Equals) == you are just comparing without taking data type into account
+// (Strictly Equals) === the value AND data type must match in order
+
+let variable1 = 2 
+let variable2 = "2"
+
+if (variable1 === variable2){
+    console.log(variable1 + variable2);
+}
+
+
+
 // Review
 // ? Data Types / Variables
 
@@ -87,16 +131,9 @@ let playerScoreString = `${
 console.log(playerScoreString);
 
 
-
-// ? Loops
-
-
-
-// ? Functions
-
 /*
 !   Challenge 
-        - Given an array, create a function that lists out the values individually. Name the function logStrings. List only the string values
+    - Given an array, create a function that lists out the values individually. Name the function logStrings. List only the string values
 
 */
 
@@ -113,13 +150,43 @@ let arr = [
   false,
 ];
 
+for (value of arr) {
+    if(typeof value === "string"){
+        console.log(value);
+    }
+}
+
 /* 
 !     Challenge
         - Using a for loop, print out numbers (1-100) that increase by 1, starting at 1.
+
         - Within the loop create a chain of if else statements that will check if a number is divisible by 3. If so, print to the console: "Fizz", along with the value
         - If a number is divisible by 5, print to the console: "Buzz", along with the value
         - If it is divisible by both print to the console: "Fizz Buzz", along with the value 
 */
+
+
+for (let number = 1; number <=100; number++) {
+  // console.log(number); 
+  if (number % 3 === 0 && number % 5 === 0){
+      console.log("Fizz Buzz", number);
+  } else if(number % 3 === 0){
+    console.log("Fizz",number );
+  } else if (number % 5 === 0){
+    console.log("Buzz", number);
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
     ! Pythagorean Theorem Challenge
