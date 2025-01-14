@@ -178,16 +178,6 @@ for (let number = 1; number <=100; number++) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* 
     ! Pythagorean Theorem Challenge
     * right angle triangle has three sides
