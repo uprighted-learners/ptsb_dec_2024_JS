@@ -17,13 +17,11 @@
         - Parenthesis are for parameters
 */
 
-
-function hi () {
-    console.log("hi");
+function hi() {
+  console.log("hi");
 }
 
-hi() // invoking/calling the function
-
+hi(); // invoking/calling the function
 
 /* 
 ?   Function Expression
@@ -37,66 +35,59 @@ hi() // invoking/calling the function
     ! Does NOT get hoisted
 */
 
-const hey = function hello () {
-    console.log("hey")
+const hey = function hello() {
+  console.log("hey");
+};
+
+hey();
+
+function greetings() {
+  console.log("Hello there");
 }
-
-hey()
-
-
-function greetings () {
-    console.log("Hello there");
-}
-
 
 // greetings //! You must have () after the func name in order to invoke/call it
 // console.log(greetings); Show to us what that variable represents
-greetings()
+greetings();
 
-//! Create a function that, when invoked/called, lists out the numbers 1-10 using a loop. 
+//! Create a function that, when invoked/called, lists out the numbers 1-10 using a loop.
 //  - Name our function 'counting'.
 
-function listNumbers () {
-    for (let i = 1; i <= 10; i++) console.log(i);
+function listNumbers() {
+  for (let i = 1; i <= 10; i++) console.log(i);
 }
 
-listNumbers()
-
+listNumbers();
 
 let arr = ["This", "is", "really", "cool", true, 1, false];
 
-function arrLoop () {
-    for (let item of arr) console.log(item);
-} 
-
-arrLoop()
-
-let dogArray = ["Husky", "Shih Tzu", "Corgi", "Shiba Inu", "Golden Retriever"]
-
-function callDogs () {
-    // for(dog of dogArray){
-    //     console.log(`${dog} goes woof`);
-    // }
-    for (index in dogArray){
-        console.log(dogArray[index]);
-        console.log("index:", index, "dog:", dogArray[index] );
-    }
-
+function arrLoop() {
+  for (let item of arr) console.log(item);
 }
-callDogs()
 
+arrLoop();
+
+let dogArray = ["Husky", "Shih Tzu", "Corgi", "Shiba Inu", "Golden Retriever"];
+
+function callDogs() {
+  // for(dog of dogArray){
+  //     console.log(`${dog} goes woof`);
+  // }
+  for (index in dogArray) {
+    console.log(dogArray[index]);
+    console.log("index:", index, "dog:", dogArray[index]);
+  }
+}
+callDogs();
 
 let num1 = 1;
 let num2 = 2;
 
+function addTwoNumbers() {
+  let sum = num1 + num2;
+  console.log(sum);
+}
 
-function addTwoNumbers () {
-    let sum = num1 + num2
-    console.log(sum);
-} 
-
-addTwoNumbers()
-
+addTwoNumbers();
 
 /* 
     ? Return
@@ -104,24 +95,42 @@ addTwoNumbers()
         - Useful for handling logic/computation/calculation and providing a single result
 */
 
-
 let iHaveCoffee = false;
 
-function returnToMeTheResultOfHavingCoffee () {
+function returnToMeTheResultOfHavingCoffee() {
+  if (iHaveCoffee) {
+    return "I am wide awake! 0_0";
+  }
 
-    if (iHaveCoffee){
-        return "I am wide awake! 0_0"
-    } 
-
-    return "Sorry, no coffee available zzzzzzzZZ"
+  return "Sorry, no coffee available zzzzzzzZZ";
 }
 
-returnToMeTheResultOfHavingCoffee() // "I am wide awake! 0_0"
+returnToMeTheResultOfHavingCoffee(); // "I am wide awake! 0_0"
 
-console.log(returnToMeTheResultOfHavingCoffee())
+console.log(returnToMeTheResultOfHavingCoffee());
 
 // let resultOfHavingCoffee = returnToMeTheResultOfHavingCoffee()
 
 // console.log(resultOfHavingCoffee);
 
+/* 
+    ? Recursion/Recursive Function
+        - A function that calls itself to construct itself as a loop
+*/
 
+function countDown(seconds) {
+  //? Base Case / Stopping Point - Our exit strategy, to break ourselves out of the loop
+  if (seconds === 0) {
+    return;
+  }
+
+  console.log(seconds);
+
+  setTimeout(() => {
+    // will execute after a set period of time
+    countDown(seconds - 1);
+  }, 1000)
+
+}
+
+countDown(100);
