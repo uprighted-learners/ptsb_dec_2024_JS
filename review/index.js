@@ -1,46 +1,38 @@
 // Assignment Review
 
-
 // ? [JS] Capitalize
 
 let word = "aMiT";
-let fullWord = word[0].toUpperCase() +  word.slice(1).toLowerCase();
-
+let fullWord = word[0].toUpperCase() + word.slice(1).toLowerCase();
 
 //? [JS] Hello Friend, Go away Enemy
 
-
 let enemy = "darth vAdEr";
 
-function greeter (name){
+function greeter(name) {
+  let nameLowerCased = name.toLowerCase();
+  let enemyLowerCased = enemy.toLowerCase();
 
-    let nameLowerCased = name.toLowerCase()
-    let enemyLowerCased = enemy.toLowerCase() 
+  if (nameLowerCased === enemyLowerCased) {
+    console.log(`Go away ${name}`);
+  } else {
+    console.log(`Hello ${name}!`);
+  }
+}
 
-    if (nameLowerCased === enemyLowerCased) {
-        console.log(`Go away ${name}`);
-    } else {
-        console.log(`Hello ${name}!`);
-    }
-} 
+greeter("Darth Vader");
 
-greeter("Darth Vader")
-
-"darth vader" === "darth vader"
-
-
+"darth vader" === "darth vader";
 
 // (Loosely Equals) == you are just comparing without taking data type into account
 // (Strictly Equals) === the value AND data type must match in order
 
-let variable1 = 2 
-let variable2 = "2"
+let variable1 = 2;
+let variable2 = "2";
 
-if (variable1 === variable2){
-    console.log(variable1 + variable2);
+if (variable1 === variable2) {
+  console.log(variable1 + variable2);
 }
-
-
 
 // Review
 // ? Data Types / Variables
@@ -107,21 +99,20 @@ if (x1 && x) {
 let myName = "Amit"; // truthy
 let myFavFood = "pizza";
 
-if (myName ) {
-    console.log(`Welcome ${myName}!`);
+if (myName) {
+  console.log(`Welcome ${myName}!`);
 
   if (myName && myFavFood) {
     console.log(`${myName}'s fav food is: ${myFavFood} `);
   }
 }
 
-
 let user = "Timmy";
 
 let verified = true;
 
-if(user || verified){
-    console.log("Hey you're a use of our db")
+if (user || verified) {
+  console.log("Hey you're a use of our db");
 }
 
 let score = 10;
@@ -129,7 +120,6 @@ let playerScoreString = `${
   score ? `Your score is: ${score}` : "Sorry no score available yet"
 }`;
 console.log(playerScoreString);
-
 
 /*
 !   Challenge 
@@ -151,9 +141,9 @@ let arr = [
 ];
 
 for (value of arr) {
-    if(typeof value === "string"){
-        console.log(value);
-    }
+  if (typeof value === "string") {
+    console.log(value);
+  }
 }
 
 /* 
@@ -165,18 +155,16 @@ for (value of arr) {
         - If it is divisible by both print to the console: "Fizz Buzz", along with the value 
 */
 
-
-for (let number = 1; number <=100; number++) {
-  // console.log(number); 
-  if (number % 3 === 0 && number % 5 === 0){
-      console.log("Fizz Buzz", number);
-  } else if(number % 3 === 0){
-    console.log("Fizz",number );
-  } else if (number % 5 === 0){
+for (let number = 1; number <= 100; number++) {
+  // console.log(number);
+  if (number % 3 === 0 && number % 5 === 0) {
+    console.log("Fizz Buzz", number);
+  } else if (number % 3 === 0) {
+    console.log("Fizz", number);
+  } else if (number % 5 === 0) {
     console.log("Buzz", number);
-  } 
+  }
 }
-
 
 /* 
     ! Pythagorean Theorem Challenge
@@ -188,3 +176,47 @@ for (let number = 1; number <=100; number++) {
     ? HINT: c = sqrt(a **2 + b ** 2)
     ? Can use Math library for a sq root function
 */
+
+function randomGuesser(min, max, smart) {
+  if (smart) {
+    return Math.floor((Math.random() * max) / 2);
+  } else {
+    return Math.floor(Math.random() * max + min);
+  }
+}
+
+let min = 1;
+let max = 5;
+let smart = false;
+
+//  min = computer's guess + 1
+//  max = computer's guess - 1
+
+max = 3;
+
+console.log(randomGuesser(min, max, smart));
+
+function fullName(first, last) {
+  return first + " " + last;
+}
+console.log(randomGuesser());
+console.log(randomGuesser());
+
+console.log(fullName("Salo", "Vasquez"));
+console.log(fullName("Amit", "Mangat"));
+
+function tradFunc(x, y) {
+  return x + y;
+}
+
+console.log(tradFunc(2, 3));
+
+const addNumbers = (x, y) => x + y
+
+
+console.log(addNumbers(5, 3))
+
+const arrowFuncSingleArg = x => x+=1
+
+
+console.log(arrowFuncSingleArg(5))

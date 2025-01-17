@@ -178,14 +178,12 @@ async function chainOfQuestions() {
 // ? Ask function with Traditional syntax
 
 function gameAsk (questionText) {
-    return new Promise ((resolve) => rl.question(questionText+"\n", (input) =>  resolve(input)))
+    return new Promise ((resolve) => rl.question(questionText+"\n", (input) => resolve(input)))
 }
 
-// ? OR with an arrow function...
+// ? OR with an arrow function ...
 
 const gameAsk =  (questionText) =>  new Promise (resolve => rl.question(questionText+"\n", resolve))
-
-
 
 let gameOn = true;
 
