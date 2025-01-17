@@ -183,7 +183,7 @@ function gameAsk (questionText) {
 
 // ? OR with an arrow function ...
 
-const gameAsk =  (questionText) =>  new Promise (resolve => rl.question(questionText+"\n", resolve))
+// const gameAsk =  (questionText) =>  new Promise (resolve => rl.question(questionText+"\n", resolve))
 
 let gameOn = true;
 
