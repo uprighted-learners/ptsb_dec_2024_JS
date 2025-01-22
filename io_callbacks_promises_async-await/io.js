@@ -160,7 +160,6 @@ async function ask1(question) {
 //? using .then syntax
 // ask1("How is the weather").then(response => console.log(response))
 
-
 //? using async/await
 async function chainOfQuestions() {
   const firstResponse = await ask1("What is your name?");
@@ -170,15 +169,16 @@ async function chainOfQuestions() {
   const secondResponse = await ask1("What is your age?");
 
   console.log(secondResponse);
-
 }
 
 // chainOfQuestions()
 
 // ? Ask function with Traditional syntax
 
-function gameAsk (questionText) {
-    return new Promise ((resolve) => rl.question(questionText+"\n", (input) => resolve(input)))
+function gameAsk(questionText) {
+  return new Promise((resolve) =>
+    rl.question(questionText + "\n", (input) => resolve(input))
+  );
 }
 
 // ? OR with an arrow function ...
@@ -188,30 +188,46 @@ function gameAsk (questionText) {
 let gameOn = true;
 
 const gameStart = async () => {
-    while (gameOn) {
+  while (gameOn) {
+    let response = await gameAsk("Give me a number!");
 
-        let response = await gameAsk("Give me a number!")
+    let convertedResponse = parseInt(response);
 
-        let convertedResponse = parseInt(response)
+    if (!Number(convertedResponse)) {
+      console.log("Please provide a valid response");
+    } else {
+      console.log("Thanks for giving me a number, let's move on");
 
-        if(!Number(convertedResponse)){
-            console.log("Please provide a valid response");
-        } else {
+      let secondResponse = await gameAsk(
+        `Do you really like the number (y/n): ${convertedResponse} `
+      );
 
-            console.log("Thanks for giving me a number, let's move on");
+      if (secondResponse === "y") {
+        console.log("Well that is sure a great number!");
+      } else {
+        continue;
+      }
 
-            let secondResponse = await gameAsk(`Do you really like the number (y/n): ${convertedResponse} `)
-
-            if(secondResponse === "y"){
-                console.log("Well that is sure a great number!");
-            } else {
-                continue
-            }
-
-            gameOn = false
-
-        }
+      gameOn = false;
     }
-}
+  }
+};
 
-gameStart()
+gameStart();
+
+const somePromise = (delay) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("secret value"), delay);
+  });
+};
+
+const promiseHandler = async () => {
+  console.log(await somePromise(1000));
+  console.log("Log after 1 second");
+  console.log(await somePromise(3000));
+  console.log("Log after 3 seconds");
+  console.log(await somePromise(2000));
+  console.log("Log after 2 seconds");
+};
+
+promiseHandler();

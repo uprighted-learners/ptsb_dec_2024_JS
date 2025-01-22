@@ -199,8 +199,7 @@ console.log(randomGuesser(min, max, smart));
 function fullName(first, last) {
   return first + " " + last;
 }
-console.log(randomGuesser());
-console.log(randomGuesser());
+
 
 console.log(fullName("Salo", "Vasquez"));
 console.log(fullName("Amit", "Mangat"));
@@ -219,4 +218,4 @@ console.log(addNumbers(5, 3))
 const arrowFuncSingleArg = x => x+=1
 
 
-console.log(arrowFuncSingleArg(5))
+console.log(arrowFuncSingleArg(5)) // 6
